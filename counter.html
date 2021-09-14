@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+		<title>Counter</title>
+	</head>
+	<body class="text-center">
+		<div class="container bg-dark col-10">
+		<h1 class="display-1 pt-4" style="margin-top: 160px; color: chocolate;">Counter</h1>
+		<span id="value" class="display-1" style="font-weight:bold;color: whitesmoke;">0</span>
+		<div class="button-container pb-5 pt-4">
+			<button class="btn btn-outline-secondary mx-2 decrease ">Decrease</button>
+			<button class="btn btn-outline-secondary reset">Reset</button>
+			<button class="btn btn-outline-secondary increase mx-2">Increase</button>
+		</div>
+	</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+		<script>
+			let count=0;
+			let value=document.querySelector('#value');
+			let butns=document.querySelectorAll(".btn");
+			butns.forEach((btn)=>{
+				btn.addEventListener('click',(el)=>{
+					const change= el.currentTarget.classList;
+					if (change.contains('decrease')) {
+						count--;
+					}
+					else if(change.contains('reset')){
+						count=0;
+					}
+					else{
+						count++;
+					}
+
+					value.textContent=count;
+			});
+			});
+		</script>
+	</body>
+</html>
